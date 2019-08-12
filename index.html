@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <title>BMI計算アプリ</title>
+</head>
+
+<body>
+    <h1>BMI計算アプリ</h1>
+    <section>
+        <h2>入力したデータをリアクティブに表示する</h2>
+        <div id="app">
+            <label>身長：<input type="text" v-model:value="{{ height }}">cm</label>
+            <label>体重：<input type="text" v-model:value="{{ weight }}">kg</label>
+            <table>
+                <tr>
+                    <th>身長</th>
+                    <th>体重</th>
+                    <th>BMI</th>
+                    <th>適正体重との差</th>
+                </tr>
+                <tr>
+                    <td>{{ height }}cm</td>
+                    <td>{{ weight }}kg</td>
+                    <td> {{ bmi }} </td>
+                    <td> {{ difference }}kg</td>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h2>入力中にもリアクティブに計算する</h2>
+    </section>
+    <section>
+        <h2>計算結果に応じて色を変える</h2>
+    </section>
+    <section>
+        <h2>計算結果を日付とともに保存する</h2>
+    </section>
+    <section>
+        <h2>計算結果を削除するボタンを設置する</h2>
+    </section>
+    <section>
+        <h2>UIを改善してみた</h2>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var app = new Vue({
+
+        })
+    </script>
+</body>
+
+</html>
