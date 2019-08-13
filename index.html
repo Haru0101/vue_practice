@@ -15,8 +15,8 @@
     <section>
         <h2>入力したデータをリアクティブに表示する</h2>
         <div id="app">
-            <label>身長：<input type="text" v-model:value="{{ height }}">cm</label>
-            <label>体重：<input type="text" v-model:value="{{ weight }}">kg</label>
+            <label>身長：<input type="text" v-model="height">cm</label>
+            <label>体重：<input type="text" v-model="weight">kg</label>
             <table>
                 <tr>
                     <th>身長</th>
@@ -25,10 +25,10 @@
                     <th>適正体重との差</th>
                 </tr>
                 <tr>
-                    <td>{{ height }}cm</td>
-                    <td>{{ weight }}kg</td>
-                    <td> {{ bmi }} </td>
-                    <td> {{ difference }}kg</td>
+                    <td>{{ $data.height }}cm</td>
+                    <td>{{ $data.weight }}kg</td>
+                    <td> {{ $data.bmi }} </td>
+                    <td> {{ $data.difference }}kg</td>
             </table>
         </div>
     </section>
@@ -51,7 +51,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
         var app = new Vue({
-
+            el: '#app',
+            data: {
+                height: '',
+                weight: ''
+            }
         })
     </script>
 </body>
