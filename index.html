@@ -21,6 +21,22 @@
                 <tr>
                     <th>身長</th>
                     <th>体重</th>
+                </tr>
+                <tr>
+                    <td>{{ $data.height }}cm</td>
+                    <td>{{ $data.weight }}kg</td>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h2>入力中にもリアクティブに計算する</h2>
+        <div id="app">
+            <label>身長：<input type="text" v-model="height">cm</label>
+            <label>体重：<input type="text" v-model="weight">kg</label>
+            <table>
+                <tr>
+                    <th>身長</th>
+                    <th>体重</th>
                     <th>BMI</th>
                     <th>適正体重との差</th>
                 </tr>
@@ -31,9 +47,6 @@
                     <td> {{ $data.difference }}kg</td>
             </table>
         </div>
-    </section>
-    <section>
-        <h2>入力中にもリアクティブに計算する</h2>
     </section>
     <section>
         <h2>計算結果に応じて色を変える</h2>
