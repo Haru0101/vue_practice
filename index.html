@@ -28,31 +28,31 @@
                     <td>{{ $data.height }}cm</td>
                     <td>{{ $data.weight }}kg</td>
             </table>
-            <button v-on:click="recordItem">
+            <!-- <button v-on:click="recordItem">
                 記録する
-            </button>
+            </button> -->
         </div>
     </section>
     <section>
-        <div id="app">
-            <h2>入力中にもリアクティブに計算する</h2>
-            <form>
-                <label>身長：<input type="text" v-bind="height">cm</label>
-                <label>体重：<input type="text" v-bind="weight">kg</label>
-            </form>
-            <table>
-                <tr>
-                    <th>身長</th>
-                    <th>体重</th>
-                    <th>BMI</th>
-                    <th>適正体重との差</th>
-                </tr>
-                <tr>
-                    <td>{{ $data.height }}cm</td>
-                    <td>{{ $data.weight }}kg</td>
-                    <td> {{ $data.bmi }} </td>
-                    <td> {{ $data.difference }}kg</td>
-            </table>
+        <!-- <div id="app"> -->
+        <h2>入力中にもリアクティブに計算する</h2>
+        <form>
+            <label>身長：<input type="text" v-model="height">cm</label>
+            <label>体重：<input type="text" v-model="weight">kg</label>
+        </form>
+        <table>
+            <tr>
+                <th>身長</th>
+                <th>体重</th>
+                <th>BMI</th>
+                <th>適正体重との差</th>
+            </tr>
+            <tr>
+                <td>{{ $data.height }}cm</td>
+                <td>{{ $data.weight }}kg</td>
+                <td> {{ $data.bmi }} </td>
+                <td> {{ $data.difference }}kg</td>
+        </table>
         </div>
     </section>
     <section>
@@ -78,13 +78,7 @@
             data: {
                 height: '',
                 weight: '',
-                bmi: ''
-            },
-            computed: {
-                bmi * bmi
-            },
-            methods: {
-
+                // bmi: ''
             }
         })
     </script>
