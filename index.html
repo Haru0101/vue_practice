@@ -12,54 +12,32 @@
 
 <body>
     <h1>BMI計算アプリ</h1>
+
     <section>
         <div id="app">
-            <h2>入力したデータをリアクティブに表示する</h2>
-            <form>
-                <label>身長：<input type="text" v-model="height">cm</label>
-                <label>体重：<input type="text" v-model="weight">kg</label>
+            <h2>計算結果を日付とともに保存する</h2>
+            <form @submit.prevent>
+                <label>身長：<input type="text" v-model="newHeight">cm</label>
+                <label>体重：<input type="text" v-model="newWeight">kg</label>
             </form>
             <table>
                 <tr>
                     <th>身長</th>
                     <th>体重</th>
+                    <th>BMI</th>
+                    <th>適正体重との差</th>
                 </tr>
                 <tr>
-                    <td>{{ $data.height }}cm</td>
-                    <td>{{ $data.weight }}kg</td>
+                    <td>{{ newHeight }}cm</td>
+                    <td>{{ newWeight }}kg</td>
+                    <td><span v-if="calcBmi">{{ calcBmi }}</span></td>
+                    <td>{{ calcDiff }}kg</td>
             </table>
-            <!-- <button v-on:click="recordItem">
-                記録する
-            </button> -->
-        </div>
-    </section>
-    <section>
-        <!-- <div id="app"> -->
-        <h2>入力中にもリアクティブに計算する</h2>
-        <!-- <form>
-            <label>身長：<input type="text" v-model="height">cm</label>
-            <label>体重：<input type="text" v-model="weight">kg</label>
-        </form>
-        <table>
-            <tr>
-                <th>身長</th>
-                <th>体重</th>
-                <th>BMI</th>
-                <th>適正体重との差</th>
-            </tr>
-            <tr>
-                <td>{{ $data.height }}cm</td>
-                <td>{{ $data.weight }}kg</td>
-                <td> {{ $data.bmi }} </td>
-                <td> {{ $data.difference }}kg</td>
-        </table> -->
+            <pre>{{$data }}</pre>
         </div>
     </section>
     <section>
         <h2>計算結果に応じて色を変える</h2>
-    </section>
-    <section>
-        <h2>計算結果を日付とともに保存する</h2>
     </section>
     <section>
         <h2>計算結果を削除するボタンを設置する</h2>
@@ -70,12 +48,24 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
+
         var app = new Vue({
+
             el: '#app',
             data: {
-                height: '',
-                weight: ''
-                // bmi: ''
+                newHeight: '',
+                newWeight: ''
+            },
+            computed: {
+                calcBmi: function () {
+                    var calcHeight = this.newHeight / 100;
+                    var bmi = Math.floor(this.newWeight / (calcHeight * calcHeight) * 10) / 10;
+                    return bmi;
+                },
+                calcDiff: function () {
+                    var diff = Math.floor((this.newWeight - ((this.newHeight / 100) * (this.newHeight / 100) * 22)) * 10) / 10;
+                    return diff;
+                }
             }
         })
     </script>
