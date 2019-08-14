@@ -36,7 +36,7 @@
     <section>
         <!-- <div id="app"> -->
         <h2>入力中にもリアクティブに計算する</h2>
-        <form>
+        <!-- <form>
             <label>身長：<input type="text" v-model="height">cm</label>
             <label>体重：<input type="text" v-model="weight">kg</label>
         </form>
@@ -52,7 +52,7 @@
                 <td>{{ $data.weight }}kg</td>
                 <td> {{ $data.bmi }} </td>
                 <td> {{ $data.difference }}kg</td>
-        </table>
+        </table> -->
         </div>
     </section>
     <section>
@@ -70,14 +70,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
-        // Vue.component('info-indicator', {
-        //     template: 
-        // })
         var app = new Vue({
             el: '#app',
             data: {
                 height: '',
-                weight: '',
+                weight: ''
                 // bmi: ''
             }
         })
