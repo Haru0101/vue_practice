@@ -13,10 +13,12 @@
 <body>
     <h1>BMI計算アプリ</h1>
     <section>
-        <h2>入力したデータをリアクティブに表示する</h2>
         <div id="app">
-            <label>身長：<input type="text" v-model="height">cm</label>
-            <label>体重：<input type="text" v-model="weight">kg</label>
+            <h2>入力したデータをリアクティブに表示する</h2>
+            <form>
+                <label>身長：<input type="text" v-model="height">cm</label>
+                <label>体重：<input type="text" v-model="weight">kg</label>
+            </form>
             <table>
                 <tr>
                     <th>身長</th>
@@ -30,10 +32,12 @@
         </div>
     </section>
     <section>
-        <h2>入力中にもリアクティブに計算する</h2>
         <div id="app">
-            <label>身長：<input type="text" v-bind="height">cm</label>
-            <label>体重：<input type="text" v-bind="weight">kg</label>
+            <h2>入力中にもリアクティブに計算する</h2>
+            <form>
+                <label>身長：<input type="text" v-bind="height">cm</label>
+                <label>体重：<input type="text" v-bind="weight">kg</label>
+            </form>
             <table>
                 <tr>
                     <th>身長</th>
@@ -72,7 +76,10 @@
             data: {
                 height: '',
                 weight: '',
-                bmi: this.height * this.height
+                bmi: ''
+            },
+            computed: {
+                bmi * bmi
             },
             methods: {
 
