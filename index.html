@@ -15,7 +15,7 @@
 
     <section>
         <div id="app">
-            <h2>計算結果を日付とともに保存する</h2>
+            <h2>計算結果を日付とともに記録する</h2>
             <form @submit.prevent>
                 <label>身長：<input type="text" v-model="newHeight">cm</label>
                 <label>体重：<input type="text" v-model="newWeight">kg</label>
@@ -34,6 +34,7 @@
                     <td>{{ calcDiff }}kg</td>
             </table>
             <pre>{{$data }}</pre>
+            <button @click="addItem">記録する</button>
         </div>
     </section>
     <section>
@@ -48,13 +49,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
-
         var app = new Vue({
-
             el: '#app',
             data: {
                 newHeight: '',
-                newWeight: ''
+                newWeight: '',
+                records: []
             },
             computed: {
                 calcBmi: function () {
@@ -65,6 +65,17 @@
                 calcDiff: function () {
                     var diff = Math.floor((this.newWeight - ((this.newHeight / 100) * (this.newHeight / 100) * 22)) * 10) / 10;
                     return diff;
+                }
+            },
+            methods: {
+                addItem: function () {
+                    var record = {
+                        height: this.newHeight,
+                        weight: this.newWeight,
+                        bmi: this.calcBmi,
+                        diff: this.calcDiff
+                    };
+                    this.records.push(record);
                 }
             }
         })
