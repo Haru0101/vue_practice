@@ -28,7 +28,9 @@
                     <td>{{ $data.height }}cm</td>
                     <td>{{ $data.weight }}kg</td>
             </table>
-            {{$data.bmi}}
+            <button v-on:click="recordItem">
+                記録する
+            </button>
         </div>
     </section>
     <section>
