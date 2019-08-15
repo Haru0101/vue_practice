@@ -34,6 +34,7 @@
                     <td>{{ calcDiff }}kg</td>
             </table>
             <pre>{{$data }}</pre>
+            <pre>{{}}</pre>
             <button @click="addItem">記録する</button>
         </div>
     </section>
@@ -54,7 +55,7 @@
             data: {
                 newHeight: '',
                 newWeight: '',
-                records: []
+                records: {}
             },
             computed: {
                 calcBmi: function () {
@@ -69,13 +70,15 @@
             },
             methods: {
                 addItem: function () {
-                    var record = {
-                        height: this.newHeight,
-                        weight: this.newWeight,
-                        bmi: this.calcBmi,
-                        diff: this.calcDiff
-                    };
-                    this.records.push(record);
+                    var date = new Date();
+                    var year = date.getFullYear();
+                    var month = date.getMonth() + 1;
+                    var day = date.getDate();
+                    records.height = this.newHeight;
+                    records.weight = this.newWeight;
+                    records.bmi = this.calcBmi;
+                    records.diff = this.calcDiff;
+                    records.date = year + "/" + month + "/" + day;
                 }
             }
         })
