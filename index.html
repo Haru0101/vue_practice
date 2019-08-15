@@ -33,6 +33,18 @@
                     <td><span v-if="calcBmi">{{ calcBmi }}</span></td>
                     <td>{{ calcDiff }}kg</td>
             </table>
+
+            <table>
+                <tr>
+                    <th>身長</th>
+                    <th>体重</th>
+                    <th>BMI</th>
+                    <th>適正体重との差</th>
+                </tr>
+                <tr>
+                    <td v-for="record in records"></td>
+                </tr>
+            </table>
             <pre>{{$data }}</pre>
             <pre>{{}}</pre>
             <button @click="addItem">記録する</button>
@@ -74,11 +86,14 @@
                     var year = date.getFullYear();
                     var month = date.getMonth() + 1;
                     var day = date.getDate();
-                    records.height = this.newHeight;
-                    records.weight = this.newWeight;
-                    records.bmi = this.calcBmi;
-                    records.diff = this.calcDiff;
-                    records.date = year + "/" + month + "/" + day;
+                    this.records = {
+                        ...this.records,
+                        height: this.newHeight,
+                        weight: this.newWeight,
+                        bmi: this.calcBmi,
+                        diff: this.calcDiff,
+                        date: year + "/" + month + "/" + day
+                    };
                 }
             }
         })
