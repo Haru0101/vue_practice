@@ -27,13 +27,13 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .title { padding: 10px 20px; margin: 0; }
 
-.form { width: 30%; border-radius: 10px; border: 4px groove #fafafa; font-size: 2rem; padding: 20px 40px; background-color: #fff; }
+.form { width: 40%; border-radius: 10px; border: 4px groove #fafafa; font-size: 2rem; padding: 20px 40px; background-color: #fff; }
 
 @media (max-width: 720px) { .form { width: 100%; } }
 
 .table { border-collapse: collapse; color: #6c653d; border: 2px solid #ccc; }
 
-.reactive-table { width: 65%; }
+.reactive-table { width: 55%; }
 
 @media (max-width: 720px) { .reactive-table { width: 100%; } }
 

@@ -31,10 +31,10 @@
                 <th class="table-heading reactive-heading">適正体重との差</th>
             </tr>
             <tr class="table-record">
-                <td>{{ newHeight }}cm</td>
-                <td>{{ newWeight }}kg</td>
-                <td><span v-if="calcBmi">{{ calcBmi }}</span></td>
-                <td>{{ calcDiff }}kg</td>
+                <td class="table-data">{{ newHeight }}cm</td>
+                <td class="table-data">{{ newWeight }}kg</td>
+                <td class="table-data"><span v-if="calcBmi">{{ calcBmi }}</span></td>
+                <td class="table-data">{{ calcDiff }}kg</td>
         </table>
         <table class="record-table table main-block">
             <!-- border="1" -->
