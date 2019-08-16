@@ -42,7 +42,7 @@
                     <th>BMI</th>
                     <th>適正体重との差</th>
                 </tr>
-                <tr>
+                <tr v-for="">
                     <td v-for="(value, key) in records">{{ value }}</td>
                 </tr>
             </table>
@@ -87,14 +87,23 @@
                     var year = date.getFullYear();
                     var month = date.getMonth() + 1;
                     var day = date.getDate();
-                    this.records = {
-                        ...this.records,
+                    var record = {
                         date: year + "/" + month + "/" + day,
                         height: this.newHeight,
                         weight: this.newWeight,
                         bmi: this.calcBmi,
                         diff: this.calcDiff
                     };
+                    this.records.push(record);
+
+                    // this.records = {
+                    //     ...this.records,
+                    //     date: year + "/" + month + "/" + day,
+                    //     height: this.newHeight,
+                    //     weight: this.newWeight,
+                    //     bmi: this.calcBmi,
+                    //     diff: this.calcDiff
+                    // };
                 }
             }
         })
