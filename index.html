@@ -15,7 +15,7 @@
 
     <section>
         <div id="app">
-            <h2>計算結果を日付とともに記録する</h2>
+            <h2>計算結果に応じて色を変える</h2>
             <form @submit.prevent>
                 <label>身長：<input type="text" v-model="newHeight">cm</label>
                 <label>体重：<input type="text" v-model="newWeight">kg</label>
@@ -61,12 +61,8 @@
                 </tr>
             </table>
             <pre>{{$data }}</pre>
-            <pre>{{}}</pre>
             <button @click="addItem">記録する</button>
         </div>
-    </section>
-    <section>
-        <h2>計算結果に応じて色を変える</h2>
     </section>
     <section>
         <h2>計算結果を削除するボタンを設置する</h2>
@@ -92,6 +88,9 @@
                 },
                 calcDiff: function () {
                     var diff = Math.floor((this.newWeight - ((this.newHeight / 100) * (this.newHeight / 100) * 22)) * 10) / 10;
+                    if (diff > 0) {
+                        diff = '+' + diff;
+                    }
                     return diff;
                 }
             },
@@ -103,21 +102,12 @@
                     var day = date.getDate();
                     var record = {
                         date: year + "/" + month + "/" + day,
-                        height: this.newHeight,
-                        weight: this.newWeight,
+                        height: this.newHeight + 'cm',
+                        weight: this.newWeight + 'kg',
                         bmi: this.calcBmi,
-                        diff: this.calcDiff
+                        diff: this.calcDiff + 'kg'
                     };
                     this.records.push(record);
-
-                    // this.records = {
-                    //     ...this.records,
-                    //     date: year + "/" + month + "/" + day,
-                    //     height: this.newHeight,
-                    //     weight: this.newWeight,
-                    //     bmi: this.calcBmi,
-                    //     diff: this.calcDiff
-                    // };
                 }
             }
         })
