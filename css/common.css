@@ -5,12 +5,14 @@ html { font-size: 62.5%; }
 
 a:link, a:visited, a:hover, a:active { text-decoration: none; color: #000; }
 
+h1, h2, h3, h4, h5, h6, p { margin: 0; }
+
 body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-color: #fcfcfc; }
 
 /*-------------------------- Layout --------------------------*/
 .header { background-color: #fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #555; border-bottom: #dadada; -webkit-box-shadow: 0px 1px 1px #e5e5e5; box-shadow: 0px 1px 1px #e5e5e5; font-size: 1.2rem; }
 
-.main { width: 80%; margin: 0 auto; }
+.main { width: 80%; margin: 0 auto 100px; }
 
 @media (max-width: 720px) { .main { width: 95%; } }
 
@@ -21,7 +23,7 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .flexbox { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
 
-.main-block { margin-top: 40px; margin-bottom: 40px; }
+.main-block { margin-top: 30px; margin-bottom: 30px; }
 
 @media (max-width: 720px) { .main-block { margin-top: 20px; margin-bottom: 20px; } }
 
@@ -37,23 +39,23 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .result-heading { border-left: 6px solid #555; }
 
-.record-heading { border-left: 6px solid #52c2d0; }
+.record-heading { border-left: 6px solid darkcyan; }
 
-.form { width: 40%; border-radius: 10px; -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); font-size: 2rem; padding: 20px 40px; background-color: #fff; }
+.form { width: 38%; border-radius: 10px; -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); font-size: 1.8rem; padding: 20px 40px; background-color: #fff; }
 
 @media (max-width: 720px) { .form { width: 100%; } }
 
-.table { border-collapse: collapse; color: #6c653d; border: 2px solid #ccc; }
+.table { border-collapse: collapse; border: 2px solid #ccc; }
 
 .result-table { width: 100%; }
 
-.result-wrap { width: 55%; }
+.result-wrap { width: 54%; }
 
 @media (max-width: 720px) { .result-wrap { width: 100%; } }
 
 .result-header { background-color: #555; }
 
-.input { width: 80px; height: 20px; margin: 0 5px; }
+.input { width: 60px; height: 22px; margin: 0 5px; }
 
 .bold { font-weight: bold; }
 
@@ -63,9 +65,13 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .table-header { height: 40px; width: 20%; font-size: 1.6rem; color: #fff; }
 
-.record-header { background-color: #52c2d0; }
+.record-header { background-color: darkcyan; }
 
-.table-data { text-align: center; height: 30px; font-size: 1.2rem; }
+.table-data { text-align: center; height: 35px; font-size: 1.2rem; }
+
+.record-data { color: #36321b; }
+
+.result-data { color: #555; }
 
 .table-record { background-color: #fff; }
 

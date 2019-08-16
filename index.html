@@ -17,15 +17,19 @@
     <main id="app" class="main">
         <section class="flexbox">
             <form class="form main-block centering-inside" @submit.prevent>
-                <p><label>身長<input class="input" required pattern="^[0-9A-Za-z]+$" v-model="newHeight">cm</label></p>
-                <p><label>体重<input class="input" required pattern="^[0-9A-Za-z]+$" v-model="newWeight">kg</label></p>
+                <div class="main-block">
+                    <p class="mini-block"><label>身長<input class="input" required pattern="^[0-9A-Za-z]+$"
+                                v-model="newHeight">cm</label></p>
+                    <p class="mini-block"><label>体重<input class="input" required pattern="^[0-9A-Za-z]+$"
+                                v-model="newWeight">kg</label></p>
+                </div>
                 <div class="centering-inside mini-block"><button class="add-btn" @click="addItem"
                         type="submit">記録する</button>
                 </div>
             </form>
             <section class="result-wrap main-block">
                 <h1 class="heading result-heading">Your BMI</h1>
-                <table class="result-table table main-block">
+                <table class="result-table table mini-block">
                     <tr>
                         <th class="table-header result-header">身長</th>
                         <th class="table-header result-header">体重</th>
@@ -33,31 +37,32 @@
                         <th class="table-header result-header">適正体重との差</th>
                     </tr>
                     <tr class="table-record">
-                        <td class="table-data">{{ newHeight }}cm</td>
-                        <td class="table-data">{{ newWeight }}kg</td>
-                        <td class="table-data"><span v-if="calcBmi">{{ calcBmi }}</span></td>
-                        <td class="table-data">{{ calcDiff }}kg</td>
+                        <td class="table-data result-data">{{ newHeight }}cm</td>
+                        <td class="table-data result-data">{{ newWeight }}kg</td>
+                        <td class="table-data result-data"><span v-if="calcBmi">{{ calcBmi }}</span></td>
+                        <td class="table-data result-data">{{ calcDiff }}kg</td>
                 </table>
             </section>
         </section>
-
-        <table class="record-table table main-block">
+        <section class="record-wrap main-block">
             <h1 class="heading record-heading">Your Records</h1>
-            <tr class="">
-                <th class="table-header record-header">日付</th>
-                <th class="table-header record-header">身長</th>
-                <th class="table-header record-header">体重</th>
-                <th class="table-header record-header">BMI</th>
-                <th class="table-header record-header">適正体重との差</th>
-            </tr>
-            <tr class="table-record" v-for="record in records">
-                <td class="table-data">{{ record.date }}</td>
-                <td class="table-data">{{ record.height }}</td>
-                <td class="table-data">{{ record.weight }}</td>
-                <td class="table-data">{{ record.bmi }}</td>
-                <td class="table-data">{{ record.diff }}</td>
-            </tr>
-        </table>
+            <table class="record-table table mini-block">
+                <tr>
+                    <th class="table-header record-header">日付</th>
+                    <th class="table-header record-header">身長</th>
+                    <th class="table-header record-header">体重</th>
+                    <th class="table-header record-header">BMI</th>
+                    <th class="table-header record-header">適正体重との差</th>
+                </tr>
+                <tr class="table-record" v-for="record in records">
+                    <td class="table-data record-data">{{ record.date }}</td>
+                    <td class="table-data  record-data">{{ record.height }}</td>
+                    <td class="table-data record-data">{{ record.weight }}</td>
+                    <td class="table-data record-data">{{ record.bmi }}</td>
+                    <td class="table-data record-data">{{ record.diff }}</td>
+                </tr>
+            </table>
+        </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
