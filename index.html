@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <title>BMI計算アプリ</title>
 </head>
@@ -15,35 +14,41 @@
     <header class="header">
         <h1 class="title">Body Mass Index</h1>
     </header>
-    <main id="app" class="main flexbox">
-        <form class="form main-block centering-inside" @submit.prevent>
-            <p><label>身長<input class="input" required pattern="^[0-9A-Za-z]+$" v-model="newHeight">cm</label></p>
-            <p><label>体重<input class="input" required pattern="^[0-9A-Za-z]+$" v-model="newWeight">kg</label></p>
-            <div class="centering-inside mini-block"><button class="add-btn" @click="addItem"
-                    type="submit">記録する</button>
-            </div>
-        </form>
-        <table class="reactive-table table main-block">
-            <tr>
-                <th class="table-heading reactive-heading">身長</th>
-                <th class="table-heading reactive-heading">体重</th>
-                <th class="table-heading reactive-heading">BMI</th>
-                <th class="table-heading reactive-heading">適正体重との差</th>
-            </tr>
-            <tr class="table-record">
-                <td class="table-data">{{ newHeight }}cm</td>
-                <td class="table-data">{{ newWeight }}kg</td>
-                <td class="table-data"><span v-if="calcBmi">{{ calcBmi }}</span></td>
-                <td class="table-data">{{ calcDiff }}kg</td>
-        </table>
+    <main id="app" class="main">
+        <section class="flexbox">
+            <form class="form main-block centering-inside" @submit.prevent>
+                <p><label>身長<input class="input" required pattern="^[0-9A-Za-z]+$" v-model="newHeight">cm</label></p>
+                <p><label>体重<input class="input" required pattern="^[0-9A-Za-z]+$" v-model="newWeight">kg</label></p>
+                <div class="centering-inside mini-block"><button class="add-btn" @click="addItem"
+                        type="submit">記録する</button>
+                </div>
+            </form>
+            <section class="result-wrap main-block">
+                <h1 class="heading result-heading">Your BMI</h1>
+                <table class="result-table table main-block">
+                    <tr>
+                        <th class="table-header result-header">身長</th>
+                        <th class="table-header result-header">体重</th>
+                        <th class="table-header result-header">BMI</th>
+                        <th class="table-header result-header">適正体重との差</th>
+                    </tr>
+                    <tr class="table-record">
+                        <td class="table-data">{{ newHeight }}cm</td>
+                        <td class="table-data">{{ newWeight }}kg</td>
+                        <td class="table-data"><span v-if="calcBmi">{{ calcBmi }}</span></td>
+                        <td class="table-data">{{ calcDiff }}kg</td>
+                </table>
+            </section>
+        </section>
+
         <table class="record-table table main-block">
-            <!-- border="1" -->
+            <h1 class="heading record-heading">Your Records</h1>
             <tr class="">
-                <th class="table-heading record-heading">日付</th>
-                <th class="table-heading record-heading">身長</th>
-                <th class="table-heading record-heading">体重</th>
-                <th class="table-heading record-heading">BMI</th>
-                <th class="table-heading record-heading">適正体重との差</th>
+                <th class="table-header record-header">日付</th>
+                <th class="table-header record-header">身長</th>
+                <th class="table-header record-header">体重</th>
+                <th class="table-header record-header">BMI</th>
+                <th class="table-header record-header">適正体重との差</th>
             </tr>
             <tr class="table-record" v-for="record in records">
                 <td class="table-data">{{ record.date }}</td>

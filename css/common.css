@@ -10,7 +10,7 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 /*-------------------------- Layout --------------------------*/
 .header { background-color: #fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #555; border-bottom: #dadada; -webkit-box-shadow: 0px 1px 1px #e5e5e5; box-shadow: 0px 1px 1px #e5e5e5; font-size: 1.2rem; }
 
-.main { width: 80%; margin: 0 auto; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+.main { width: 80%; margin: 0 auto; }
 
 @media (max-width: 720px) { .main { width: 95%; } }
 
@@ -19,25 +19,39 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .centering-outside { margin: 0 auto; }
 
-.flexbox { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+.flexbox { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
 
 .main-block { margin-top: 40px; margin-bottom: 40px; }
 
+@media (max-width: 720px) { .main-block { margin-top: 20px; margin-bottom: 20px; } }
+
 .mini-block { margin-top: 20px; margin-bottom: 20px; }
+
+@media (max-width: 720px) { .mini-block { margin-top: 10px; margin-bottom: 10px; } }
 
 .title { padding: 10px 20px; margin: 0; }
 
-.form { width: 40%; border-radius: 10px; border: 4px groove #fafafa; font-size: 2rem; padding: 20px 40px; background-color: #fff; }
+.heading { position: relative; font-size: 1.6rem; padding: 0.25em 0 0.5em 0.75em; }
+
+.heading:after { position: absolute; left: 0; bottom: 0; content: ""; width: 100%; height: 0; border-bottom: 1px solid #ccc; }
+
+.result-heading { border-left: 6px solid #555; }
+
+.record-heading { border-left: 6px solid #52c2d0; }
+
+.form { width: 40%; border-radius: 10px; -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); font-size: 2rem; padding: 20px 40px; background-color: #fff; }
 
 @media (max-width: 720px) { .form { width: 100%; } }
 
 .table { border-collapse: collapse; color: #6c653d; border: 2px solid #ccc; }
 
-.reactive-table { width: 55%; }
+.result-table { width: 100%; }
 
-@media (max-width: 720px) { .reactive-table { width: 100%; } }
+.result-wrap { width: 55%; }
 
-.reactive-heading { background-color: #555; }
+@media (max-width: 720px) { .result-wrap { width: 100%; } }
+
+.result-header { background-color: #555; }
 
 .input { width: 80px; height: 20px; margin: 0 5px; }
 
@@ -47,9 +61,9 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .add-btn:hover { -webkit-box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 12px 0 rgba(0, 0, 0, 0.12); box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 12px 0 rgba(0, 0, 0, 0.12); }
 
-.table-heading { height: 40px; width: 20%; font-size: 1.6rem; color: #fff; }
+.table-header { height: 40px; width: 20%; font-size: 1.6rem; color: #fff; }
 
-.record-heading { background-color: #52c2d0; }
+.record-header { background-color: #52c2d0; }
 
 .table-data { text-align: center; height: 30px; font-size: 1.2rem; }
 
