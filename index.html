@@ -20,6 +20,7 @@
                 <label>身長：<input type="text" v-model="newHeight">cm</label>
                 <label>体重：<input type="text" v-model="newWeight">kg</label>
             </form>
+            <br>
             <table>
                 <tr>
                     <th>身長</th>
@@ -33,7 +34,9 @@
                     <td><span v-if="calcBmi">{{ calcBmi }}</span></td>
                     <td>{{ calcDiff }}kg</td>
             </table>
-
+            <button @click="addItem">記録する</button>
+            <br>
+            <br>
             <table border="1" style="border-collapse: collapse;">
                 <tr>
                     <th>日付</th>
@@ -60,10 +63,9 @@
                     </td>
                 </tr>
             </table>
-            <pre>{{$data }}</pre>
-            <button @click="addItem">記録する</button>
         </div>
     </section>
+
     <section>
         <h2>計算結果を削除するボタンを設置する</h2>
     </section>
@@ -96,10 +98,13 @@
             },
             methods: {
                 addItem: function () {
+                    // 現在の日付を取得
                     var date = new Date();
                     var year = date.getFullYear();
                     var month = date.getMonth() + 1;
                     var day = date.getDate();
+
+                    // プロパティと値をセット
                     var record = {
                         date: year + "/" + month + "/" + day,
                         height: this.newHeight + 'cm',
@@ -107,6 +112,8 @@
                         bmi: this.calcBmi,
                         diff: this.calcDiff + 'kg'
                     };
+
+                    // recordオブジェクトをrecords配列に格納
                     this.records.push(record);
                 }
             }
