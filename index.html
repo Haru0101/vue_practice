@@ -15,46 +15,44 @@
     <header class="header">
         <h1 class="title">Body Mass Index</h1>
     </header>
-    <main class="main">
-        <div id="app">
-            <form class="form main-block" @submit.prevent>
-                <label>身長：<input class="input input-height" required pattern="^[0-9A-Za-z]+$"
-                        v-model="newHeight">cm</label>
-                <label>体重：<input class="input input-weight" required pattern="^[0-9A-Za-z]+$"
-                        v-model="newWeight">kg</label>
-                <table>
-                    <tr>
-                        <th>身長</th>
-                        <th>体重</th>
-                        <th>BMI</th>
-                        <th>適正体重との差</th>
-                    </tr>
-                    <tr>
-                        <td>{{ newHeight }}cm</td>
-                        <td>{{ newWeight }}kg</td>
-                        <td><span v-if="calcBmi">{{ calcBmi }}</span></td>
-                        <td>{{ calcDiff }}kg</td>
-                </table>
-                <button class="add-btn" @click="addItem" type="submit">記録する</button>
-            </form>
-            <table class="record-table main-block">
-                <!-- border="1" -->
-                <tr class="">
-                    <th class="table-heading">日付</th>
-                    <th class="table-heading">身長</th>
-                    <th class="table-heading">体重</th>
-                    <th class="table-heading">BMI</th>
-                    <th class="table-heading">適正体重との差</th>
-                </tr>
-                <tr class="table-record" v-for="record in records">
-                    <td class="table-data">{{ record.date }}</td>
-                    <td class="table-data">{{ record.height }}</td>
-                    <td class="table-data">{{ record.weight }}</td>
-                    <td class="table-data">{{ record.bmi }}</td>
-                    <td class="table-data">{{ record.diff }}</td>
-                </tr>
-            </table>
-        </div>
+    <main id="app" class="main flexbox">
+        <form class="form main-block centering-inside" @submit.prevent>
+            <p><label>身長<input class="input" required pattern="^[0-9A-Za-z]+$" v-model="newHeight">cm</label></p>
+            <p><label>体重<input class="input" required pattern="^[0-9A-Za-z]+$" v-model="newWeight">kg</label></p>
+            <div class="centering-inside mini-block"><button class="add-btn" @click="addItem"
+                    type="submit">記録する</button>
+            </div>
+        </form>
+        <table class="reactive-table table main-block">
+            <tr>
+                <th class="table-heading reactive-heading">身長</th>
+                <th class="table-heading reactive-heading">体重</th>
+                <th class="table-heading reactive-heading">BMI</th>
+                <th class="table-heading reactive-heading">適正体重との差</th>
+            </tr>
+            <tr class="table-record">
+                <td>{{ newHeight }}cm</td>
+                <td>{{ newWeight }}kg</td>
+                <td><span v-if="calcBmi">{{ calcBmi }}</span></td>
+                <td>{{ calcDiff }}kg</td>
+        </table>
+        <table class="record-table table main-block">
+            <!-- border="1" -->
+            <tr class="">
+                <th class="table-heading record-heading">日付</th>
+                <th class="table-heading record-heading">身長</th>
+                <th class="table-heading record-heading">体重</th>
+                <th class="table-heading record-heading">BMI</th>
+                <th class="table-heading record-heading">適正体重との差</th>
+            </tr>
+            <tr class="table-record" v-for="record in records">
+                <td class="table-data">{{ record.date }}</td>
+                <td class="table-data">{{ record.height }}</td>
+                <td class="table-data">{{ record.weight }}</td>
+                <td class="table-data">{{ record.bmi }}</td>
+                <td class="table-data">{{ record.diff }}</td>
+            </tr>
+        </table>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
