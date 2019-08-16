@@ -15,7 +15,7 @@
 
     <section>
         <div id="app">
-            <h2>計算結果に応じて色を変える</h2>
+            <h2>計算結果を削除するボタンを設置する</h2>
             <form @submit.prevent>
                 <label>身長：<input type="text" v-model="newHeight">cm</label>
                 <label>体重：<input type="text" v-model="newWeight">kg</label>
@@ -46,28 +46,14 @@
                     <th>適正体重との差</th>
                 </tr>
                 <tr v-for="record in records">
-                    <td>
-                        {{ record.date }}
-                    </td>
-                    <td>
-                        {{ record.height }}
-                    </td>
-                    <td>
-                        {{ record.weight }}
-                    </td>
-                    <td>
-                        {{ record.bmi }}
-                    </td>
-                    <td>
-                        {{ record.diff }}
-                    </td>
+                    <td>{{ record.date }}</td>
+                    <td>{{ record.height }}</td>
+                    <td>{{ record.weight }}</td>
+                    <td>{{ record.bmi }}</td>
+                    <td>{{ record.diff }}</td>
                 </tr>
             </table>
         </div>
-    </section>
-
-    <section>
-        <h2>計算結果を削除するボタンを設置する</h2>
     </section>
     <section>
         <h2>UIを改善してみた</h2>
