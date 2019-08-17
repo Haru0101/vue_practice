@@ -16,7 +16,7 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .main { width: 80%; margin: 0 auto 100px; }
 
-@media (max-width: 720px) { .main { width: 90%; } }
+@media (max-width: 720px) { .main { width: 95%; } }
 
 /*-------------------------- Module --------------------------*/
 .centering-inside { text-align: center; }
