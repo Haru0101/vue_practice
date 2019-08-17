@@ -16,7 +16,7 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .main { width: 80%; margin: 0 auto 100px; }
 
-@media (max-width: 720px) { .main { width: 95%; } }
+@media (max-width: 720px) { .main { width: 90%; } }
 
 /*-------------------------- Module --------------------------*/
 .centering-inside { text-align: center; }
@@ -43,7 +43,7 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .record-heading { border-left: 6px solid darkcyan; }
 
-.form { width: 38%; border-radius: 10px; -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); font-size: 1.8rem; padding: 20px 40px; background-color: #fff; }
+.form { width: 38%; border-radius: 10px; -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); font-size: 1.8rem; padding-top: 20px; padding-bottom: 20px; background-color: #fff; }
 
 @media (max-width: 720px) { .form { width: 100%; } }
 
