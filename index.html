@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/common.css">
-    <title>BMI計算アプリ</title>
+    <title>BMI計算</title>
 </head>
 
 <body>
@@ -31,10 +31,8 @@
                 <h1 class="heading result-heading">Your BMI</h1>
                 <table class="result-table table mini-block">
                     <tr>
-                        <th class="table-header result-header">身長</th>
-                        <th class="table-header result-header">体重</th>
-                        <th class="table-header result-header">BMI</th>
-                        <th class="table-header result-header">適正体重との差</th>
+                        <th v-for="resultHeader in resultHeaders" class="table-header result-header">{{ resultHeader }}
+                        </th>
                     </tr>
                     <tr class="table-record">
                         <td class="table-data result-data">{{ newHeight }}cm</td>
@@ -48,11 +46,8 @@
             <h1 class="heading record-heading">Your Records</h1>
             <table class="record-table table mini-block">
                 <tr>
-                    <th class="table-header record-header">日付</th>
-                    <th class="table-header record-header">身長</th>
-                    <th class="table-header record-header">体重</th>
-                    <th class="table-header record-header">BMI</th>
-                    <th class="table-header record-header">適正体重との差</th>
+                    <th v-for="recordsHeader in recordsHeaders" class="table-header record-header">{{ recordsHeader }}
+                    </th>
                 </tr>
                 <tr class="table-record" v-for="record in records">
                     <td class="table-data record-data">{{ record.date }}</td>
@@ -71,6 +66,8 @@
             data: {
                 newHeight: '',
                 newWeight: '',
+                resultHeaders: ['身長', '体重', 'BMI', '適正体重との差'],
+                recordsHeaders: ['日付', '身長', '体重', 'BMI', '適正体重との差'],
                 records: []
             },
             computed: {
