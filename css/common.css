@@ -7,7 +7,7 @@ a:link, a:visited, a:hover, a:active { text-decoration: none; color: #000; }
 
 h1, h2, h3, h4, h5, h6, p { margin: 0; }
 
-button { border: none; }
+button { border: none; background-color: #fff; }
 
 body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-color: #fcfcfc; }
 
@@ -27,7 +27,7 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .main-block { margin-top: 30px; margin-bottom: 30px; }
 
-@media (max-width: 720px) { .main-block { margin-top: 20px; margin-bottom: 20px; } }
+@media (max-width: 720px) { .main-block { margin-top: 15px; margin-bottom: 15px; } }
 
 .mini-block { margin-top: 20px; margin-bottom: 20px; }
 
@@ -57,7 +57,7 @@ body { font-family: "YuGothic", sans-serif; padding: 0; margin: 0; background-co
 
 .result-header { background-color: #555; }
 
-.input { width: 60px; height: 22px; margin: 0 5px; }
+.input { width: 60px; height: 25px; margin: 0 5px; }
 
 .bold { font-weight: bold; }
 
